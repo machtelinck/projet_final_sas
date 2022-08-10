@@ -1,0 +1,171 @@
+valeurs manquante 
+df.info()
+missingno => msno.matrix
+savoir si une donnée est relevante  = corréaltion de pearson 
+on peut creer plein de colonne puis les trier après 
+il y aurait deux maison avec le même id 
+quels sont les valeurs a normaliser  ? parmi : 
+id	: non
+date	: non 
+price	: ?
+bedrooms: ?
+bathrooms	: ?
+interior_space	: oui 
+land_space	: oui
+floors	: ?
+see_sea	: non 
+view_qual : ?
+condition : ?
+grade	: ?
+space_above : oui
+sqft_basement : oui
+yr_built: non
+yr_renovated: non
+zipcode	: ??
+lat	long	: peut être
+space_int_15	: oui
+space_land_15 : oui 
+
+ou alors on doit normaliser que le prix 
+
+
+
+panda convert to string 
+
+
+revoir l'orthographe des mask 
+
+one hot encoding 
+representer les maisons sur une map 
+afficher les maisons en fonction du prix 
+sklearn one hot encoding 
+
+
+
+
+enlever les valeurs "aberrante"  
+maison sans chambre ou sans eau
+
+age maison 
+
+
+3 minutes : Introduction du jeu de données, nettoyage effectuée
+les doublons , les valeurs nulle , les donées aberrante 
+
+
+5 minutes : Exploration du dataset:
+comment se présent -il 
+quel sont les donées 
+
+
+
+10 minutes : Modélisations (feature engineering, data leakage, choix du modèle, pipeline, scores)
+
+
+
+
+3 minutes : Démonstration de votre application :
+2 minutes : Conclusion, pistes d’amélioration, difficultés rencontrées
+5 minutes : Questions-réponses
+
+Ridge : The theory was first introduced by Hoerl and Kennard in 1970 in their Technometrics papers “RIDGE regressions: biased estimation of nonorthogonal problems” 
+and “RIDGE regressions: applications in nonorthogonal problems”.[3][4][1] This was the result of ten years of research into the field of ridge analysis.[5]
+
+Motivation: too many predictors
+
+lasso : 
+Les principaux avantages du lasso sont :
+
+    Grande dimension : le lasso fonctionne dans les cas où le nombre d'individus est inférieur au nombre de variables ( n < p ) {\displaystyle (n<p)} {\displaystyle (n<p)}, 
+    si toutefois un faible nombre de ces variables a une influence sur les observations (hypothèse de parcimonie). 
+    Cette propriété n'est pas vraie dans le cas de la régression linéaire classique avec un risque associé qui augmente comme la dimension de l'espace 
+    des variables même si l'hypothèse de parcimonie est vérifiée.
+    Sélection parcimonieuse : le lasso permet de sélectionner un sous-ensemble restreint de variables (dépendant du paramètre λ {\displaystyle \lambda } \lambda ). 
+    Cette sélection restreinte permet souvent de mieux interpréter un modèle (rasoir d'Ockham).
+    Consistance de la sélection : lorsque le vrai vecteur solution β {\displaystyle \beta } \beta est creux ( ‖ β ‖ 0 = K < p )
+     {\displaystyle (\|\beta \|_{0}=K<p)} {\displaystyle (\|\beta \|_{0}=K<p)}, c'est-à-dire que seul un sous-ensemble de variables est utilisé pour la prédiction, 
+     sous de bonnes conditions, le lasso sera en mesure de sélectionner ces variables d'intérêts avant toutes autres variables4.
+
+Par contre, certaines limites du lasso ont été démontrées :
+
+    Les fortes corrélations : si des variables sont fortement corrélées entre elles et qu'elles sont importantes pour la prédiction, le lasso en privilégiera une au détriment des autres. 
+    Un autre cas, où les corrélations posent problème, est quand les variables d'intérêts sont corrélées avec d'autres variables. 
+    Dans ce cas, la consistance de la sélection du lasso n'est plus assurée4.
+    La très grande dimension : lorsque notamment la dimension est trop élevée 
+    ( p {\displaystyle p} p très grand comparé à n {\displaystyle n} n) ou le vrai vecteur β {\displaystyle \beta } \beta n'est pas suffisamment creux (trop de variables d'intérêts), 
+    le lasso ne pourra pas retrouver l'ensemble de ces variables d'intérêts5.
+
+
+    make pipeline 
+    sklearn standart scaler
+    from sklearn import.pipeline import make_pipeline 
+    from sklearn.preprocessing import StandartScaler
+    from sklearn.model_selection import train_test_split
+    import oneHot encoder
+    make_pipeline(StandartScaler(),ONehotEncoder(),LinearRegression())
+    my_pipe.fit(X_test,Y_test)
+    
+
+    The predict() method always expects a 2D array of shape [n_samples, n_features]. 
+    This means that if you want to predict even for a single data point, you will have to convert it into a 2D array.
+https://stackoverflow.com/questions/56717542/how-to-make-prediction-with-single-sample-in-sklearn-model-predict
+This array can now be transformed using standard scalar using transform() method before being used to generate a prediction from the model.
+
+on doit transformer les données de l'utilisateur en liste 
+peut etre exprimer une liste d'abord 
+
+    # Sample data
+print(arr)
+[1, 2, 3, 4]
+
+# Reshaping into 2D
+arr.reshape(1, -1)
+
+# Result
+array([[1, 2, 3, 4]])
+
+
+
+
+
+voici les colonne de df_cleared [
+         
+     
+    
+    'yr_renovated
+       
+  
+
+       'zipcode_98001', 'zipcode_98002', 'zipcode_98003', 'zipcode_98004',
+       'zipcode_98005', 'zipcode_98006', 'zipcode_98022', 'zipcode_98023',
+       'zipcode_98030', 'zipcode_98031', 'zipcode_98033', 'zipcode_98038',
+       'zipcode_98039', 'zipcode_98040', 'zipcode_98042', 'zipcode_98055',
+       'zipcode_98058', 'zipcode_98075', 'zipcode_98092', 'zipcode_98102',
+       'zipcode_98105', 'zipcode_98106', 'zipcode_98109', 'zipcode_98112',
+       'zipcode_98119', 'zipcode_98133', 'zipcode_98168', 'zipcode_98178',
+       'zipcode_98198', 'zipcode_98199']
+
+
+
+       input streamlit ---> variable ----> modele de machine learining  *si dans pipeline il y a column transformer , il va rechercher le nom des colonnes 
+       donc transformer la liste de variables en un dataframe avec le nom des colonne 
+
+
+       faire un boutton qui dit d'envoyer la prediction 
+
+       1) faire prendre les bonnes forme a l'app streamlit
+       2) make pipeline 
+       3) residu 
+       transformer les valeurs pour pouvoir les utiliser 
+
+
+
+
+
+       1) inputs 
+       2) transformation des inputs en df
+       3) faire une prédiction 
+
+
+       ['id', , 
+        'condition', , ,]
